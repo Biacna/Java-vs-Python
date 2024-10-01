@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>cont_main.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #6897bb;}
+.s4 { color: #808080;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+cont_main.py</font>
+</center></td></tr></table>
+<pre><span class="s0">from </span><span class="s1">oop.cont_bancar </span><span class="s0">import </span><span class="s1">contBancar</span>
+
+<span class="s1">cont1 = contBancar(</span><span class="s2">'Bianca'</span><span class="s0">, </span><span class="s2">'RO0001'</span><span class="s1">)</span>
+<span class="s1">cont2 = contBancar(</span><span class="s2">'Shaa'</span><span class="s0">, </span><span class="s2">'RO0002'</span><span class="s1">)</span>
+
+<span class="s1">cont1.activareCont(</span><span class="s3">3333</span><span class="s1">)</span>
+<span class="s1">cont1.activareCont(</span><span class="s3">7777</span><span class="s1">)</span>
+<span class="s1">cont2.activareCont(</span><span class="s3">5555</span><span class="s1">)</span>
+
+<span class="s1">cont1.alimentareCont(</span><span class="s3">300</span><span class="s1">)</span>
+<span class="s1">cont2.alimentareCont(</span><span class="s3">500</span><span class="s1">)</span>
+<span class="s1">cont1.alimentareCont(</span><span class="s3">700</span><span class="s1">)</span>
+
+<span class="s1">cont1.debitareCont(</span><span class="s3">500</span><span class="s1">)</span>
+<span class="s1">cont2.debitareCont(</span><span class="s3">200</span><span class="s1">)</span>
+<span class="s1">cont1.debitareCont(</span><span class="s3">500</span><span class="s1">)</span>
+
+<span class="s1">cont1.interogareSold()</span>
+<span class="s1">cont2.interogareSold()</span>
+
+<span class="s4"># tema</span>
+<span class="s4"># class angajat</span>
+<span class="s4"># nume, prenume, salariu, vechime</span>
+<span class="s4"># in constructor punem nume, prenume, salariu, functie, vechime</span>
+<span class="s4"># metode:</span>
+<span class="s4"># descriere =&gt; cum il cheama, ce salariu are...</span>
+<span class="s4"># acualizare vechime - ia un parametru: noua_vechime</span>
+                        <span class="s4"># self.vechime = noua vechime</span>
+<span class="s4"># marire salariu in functie de vechime. Daca are peste 3 ani ii dam 100 lei, daca are peste 5 ani...</span></pre>
+</body>
+</html>
