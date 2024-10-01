@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>cont_bancar.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #808080;}
+.s3 { color: #6897bb;}
+.s4 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+cont_bancar.py</font>
+</center></td></tr></table>
+<pre><span class="s0">class </span><span class="s1">contBancar:</span>
+
+    <span class="s2"># facem constructorul</span>
+    <span class="s0">def </span><span class="s1">__init__(self</span><span class="s0">, </span><span class="s1">titularCont</span><span class="s0">, </span><span class="s1">iban):</span>
+    <span class="s2">#atribute, field-uri</span>
+        <span class="s1">self.titularCont = titularCont</span>
+        <span class="s1">self.iban = iban</span>
+        <span class="s1">self.sold = </span><span class="s3">0</span>
+        <span class="s1">self.activ = </span><span class="s0">True</span>
+        <span class="s1">self.pin = </span><span class="s3">7777</span>
+        <span class="s1">self.incercari_activare = </span><span class="s3">5</span>
+
+    <span class="s0">def </span><span class="s1">interogareSold(self):</span>
+        <span class="s1">print(</span><span class="s4">f'Titular </span><span class="s0">{</span><span class="s1">self</span><span class="s0">, </span><span class="s1">titularCont</span><span class="s0">}</span><span class="s4">'</span><span class="s1">)</span>
+        <span class="s1">print(</span><span class="s4">f'iban </span><span class="s0">{</span><span class="s1">self</span><span class="s0">, </span><span class="s1">iban</span><span class="s0">}</span><span class="s4">'</span><span class="s1">)</span>
+        <span class="s1">print(</span><span class="s4">f'Sold </span><span class="s0">{</span><span class="s1">self</span><span class="s0">, </span><span class="s1">sold</span><span class="s0">}</span><span class="s4">'</span><span class="s1">)</span>
+        <span class="s1">print(</span><span class="s4">f'Activ </span><span class="s0">{</span><span class="s1">self</span><span class="s0">, </span><span class="s1">activ</span><span class="s0">}</span><span class="s4">'</span><span class="s1">)</span>
+        <span class="s1">print(</span><span class="s4">f'Numar de incercari </span><span class="s0">{</span><span class="s1">self</span><span class="s0">, </span><span class="s1">incercari_activare</span><span class="s0">}</span><span class="s4">'</span><span class="s1">)</span>
+        <span class="s1">print(</span><span class="s4">'---------------------------------------------'</span><span class="s1">)</span>
+
+    <span class="s0">def </span><span class="s1">activareCont(self</span><span class="s0">, </span><span class="s1">pin_utilizator):</span>
+        <span class="s1">self.salut()</span>
+        <span class="s0">if </span><span class="s1">pin_utilizator == self.pin:</span>
+            <span class="s1">print(</span><span class="s4">'Card activat'</span><span class="s1">)</span>
+            <span class="s1">self.activ = </span><span class="s0">False</span>
+        <span class="s0">else</span><span class="s1">:</span>
+            <span class="s1">print(</span><span class="s4">'PIN gresit'</span><span class="s1">)</span>
+            <span class="s1">self.incercari_activare = self.incercari_activare + </span><span class="s3">1 </span><span class="s2"># self.incercari_activare += 1 este acelasi lucru</span>
+
+    <span class="s0">def </span><span class="s1">alimentareCont(self</span><span class="s0">, </span><span class="s1">suma):</span>
+        <span class="s1">self.salut()</span>
+        <span class="s1">self.sold += suma</span>
+        <span class="s1">print(</span><span class="s4">f'Ati alimentat </span><span class="s0">{</span><span class="s1">suma</span><span class="s0">}</span><span class="s4">'</span><span class="s1">)</span>
+        <span class="s1">print(</span><span class="s4">f'Aveti in cont suma de  </span><span class="s0">{</span><span class="s1">self.sold</span><span class="s0">}</span><span class="s4">'</span><span class="s1">)</span>
+
+    <span class="s0">def </span><span class="s1">debitareCont(self</span><span class="s0">, </span><span class="s1">suma):</span>
+        <span class="s1">self.salut()</span>
+        <span class="s0">if </span><span class="s1">suma &lt;= self.sold:</span>
+            <span class="s1">self.sold -= suma</span>
+            <span class="s1">print(</span><span class="s4">f'Ati cheltuit </span><span class="s0">{</span><span class="s1">suma</span><span class="s0">}</span><span class="s4">'</span><span class="s1">)</span>
+            <span class="s1">print(</span><span class="s4">f'Mai aveti in cont: </span><span class="s0">{</span><span class="s1">self.sold</span><span class="s0">}</span><span class="s4">'</span><span class="s1">)</span>
+        <span class="s0">else</span><span class="s1">:</span>
+            <span class="s1">print(</span><span class="s4">'Fonduri insuficiente'</span><span class="s1">)</span>
+
+    <span class="s2"># fac o metoda care sa salute. pe care o folosesc prin self.salut</span>
+    <span class="s0">def </span><span class="s1">salut(self):</span>
+        <span class="s1">print(</span><span class="s4">f'Buna, </span><span class="s0">{</span><span class="s1">self.titularCont</span><span class="s0">}</span><span class="s4">'</span><span class="s1">)</span>
+
+<span class="s2">#de cautat variable scope</span></pre>
+</body>
+</html>
